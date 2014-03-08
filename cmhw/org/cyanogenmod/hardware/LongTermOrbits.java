@@ -23,8 +23,8 @@ import java.io.File;
  */
 public class LongTermOrbits {
 
-    // We use the "7 day" data file
-    private static final String LTO_SRC = "http://gllto.glpals.com/7day/v2/latest/lto2.dat";
+    // We use the "4 day" data file
+    private static final String LTO_SRC = "http://gllto.glpals.com/4day/v2/latest/lto2.dat";
     private static final File LTO_DST = new File("/data/gps/lto2.dat");
     private static final long DOWNLOAD_INTERVAL_DEFAULT = 259200000; /* 3 days */
 
