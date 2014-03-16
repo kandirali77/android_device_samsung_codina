@@ -31,6 +31,12 @@
             android:summary="@string/fsync_summary_head"
             android:title="@string/fsync_title_head" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/anagain3_subcat_title" >
+        <CheckBoxPreference
+            android:key="enable_anagain3"
+            android:summary="@string/enable_anagain3_summary_head"
+            android:title="@string/enable_anagain3_title_head" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/gpu_subcat_title" >
         <com.cyanogenmod.settings.device.MaliL2MaxReads
             android:defaultValue="48"
