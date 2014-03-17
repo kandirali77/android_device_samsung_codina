@@ -26,7 +26,7 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-public class AudioFragmentActiviy extends PreferenceFragment {
+public class AudioFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_Audio";
 	
