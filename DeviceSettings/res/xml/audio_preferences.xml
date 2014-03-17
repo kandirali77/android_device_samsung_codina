@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <PreferenceCategory android:title="@string/abbamp_subcat_title" >
+            
+        <!-- AnaGain3 -->
+        <CheckBoxPreference
+            android:key="enable_anagain3"
+            android:summary="@string/enable_anagain3_summary_head"
+            android:title="@string/enable_anagain3_title_head" />
+        
+        <!-- HsLDigGain -->
+        <CheckBoxPreference
+            android:key="enable_hsldiggain"
+            android:summary="@string/enable_hsldiggain_summary_head"
+            android:title="@string/enable_hsldiggain_title_head" />
+        
+        <!-- HsRDigGain -->
+        <CheckBoxPreference
+            android:key="enable_hsrdiggain"
+            android:summary="@string/enable_hsrdiggain_summary_head"
+            android:title="@string/enable_hsrdiggain_title_head" />
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

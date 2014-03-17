@@ -70,5 +70,14 @@
     <string name="touchscreen_subcat_title">Touchscreen</string>
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
+    
+    <!-- CATEGORY: ABBAmp -->
+    <string name="abbamp_subcat_title">ABBAmp</string>
+    <string name="enable_anagain3_title_head">AnaGain3</string>
+    <string name="enable_anagain3_summary_head">Enable headset analog gain path.</string>
+    <string name="enable_hsldiggain_title_head">HsLDigGain</string>
+    <string name="enable_hsldiggain_summary_head">Enable headset left digital path gain.</string>
+    <string name="enable_hsrdiggain_title_head">HsRDigGain</string>
+    <string name="enable_hsrdiggain_summary_head">Enable headset right digital path gain.</string>
 
 </resources>

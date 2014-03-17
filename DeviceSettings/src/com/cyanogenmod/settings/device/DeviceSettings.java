@@ -49,6 +49,9 @@ public class DeviceSettings extends FragmentActivity {
 	public static final String KEY_USE_SWEEP2WAKE = "use_sweep2wake";
 	public static final String KEY_USE_SPI_CRC = "use_spi_crc";
 	public static final String KEY_SWITCH_STORAGE = "switch_storage";
+	public static final String KEY_ENABLE_ANAGAIN3 = "enable_anagain3";
+	public static final String KEY_ENABLE_HSLDIGGAIN = "enable_hsldiggain";
+	public static final String KEY_ENABLE_HSRDIGGAIN = "enable_hsrdiggain";
 
 	ViewPager mViewPager;
 	TabsAdapter mTabsAdapter;
