@@ -37,6 +37,10 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	public static final String FILE_ANAGAIN3 = "/sys/kernel/abb-codec/anagain3";
 	
+	public static final String FILE_HSLDIGGAIN = "/sys/kernel/abb-codec/hsldiggain";
+	
+	public static final String FILE_HSRDIGGAIN = "/sys/kernel/abb-codec/hsrdiggain";
+	
 	public static final String FILE_SWEEP2WAKE = "/sys/kernel/bt404/sweep2wake";
 
 	public static final String FILE_SPI_CRC = "/sys/module/mmc_core/parameters/use_spi_crc";
@@ -92,6 +96,18 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 			Utils.writeValue(FILE_ANAGAIN3, boxValue);
 		}
 
+		if (key.equals(DeviceSettings.KEY_ENABLE_HSLDIGGAIN)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_HSLDIGGAIN, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_HSRDIGGAIN)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_HSRDIGGAIN, boxValue);
+		}
+		
 		return true;
 	}
 
@@ -115,6 +131,14 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		String anagain3value = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_ENABLE_ANAGAIN3, false) ? "on" : "off";
 		Utils.writeValue(FILE_ANAGAIN3, anagain3value);
+		
+		String hsldiggainvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_HSLDIGGAIN, false) ? "on" : "off";
+		Utils.writeValue(FILE_HSLDIGGAIN, hsldiggainvalue);
+		
+		String hsrdiggainvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_HSRDIGGAIN, false) ? "on" : "off";
+		Utils.writeValue(FILE_HSRDIGGAIN, hsrdiggainvalue);
 	}
 
 }
