@@ -34,12 +34,6 @@ import java.io.IOException;
 public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_Advanced";
-
-	public static final String FILE_ANAGAIN3 = "/sys/kernel/abb-codec/anagain3";
-	
-	public static final String FILE_HSLDIGGAIN = "/sys/kernel/abb-codec/hsldiggain";
-	
-	public static final String FILE_HSRDIGGAIN = "/sys/kernel/abb-codec/hsrdiggain";
 	
 	public static final String FILE_SWEEP2WAKE = "/sys/kernel/bt404/sweep2wake";
 
@@ -90,24 +84,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 		}
 		
-		if (key.equals(DeviceSettings.KEY_ENABLE_ANAGAIN3)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
-					: "off");
-			Utils.writeValue(FILE_ANAGAIN3, boxValue);
-		}
-
-		if (key.equals(DeviceSettings.KEY_ENABLE_HSLDIGGAIN)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
-					: "off");
-			Utils.writeValue(FILE_HSLDIGGAIN, boxValue);
-		}
-		
-		if (key.equals(DeviceSettings.KEY_ENABLE_HSRDIGGAIN)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
-					: "off");
-			Utils.writeValue(FILE_HSRDIGGAIN, boxValue);
-		}
-		
 		return true;
 	}
 
@@ -127,18 +103,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		String s2wvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SWEEP2WAKE, false) ? "on" : "off";
 		Utils.writeValue(FILE_SWEEP2WAKE, s2wvalue);
-		
-		String anagain3value = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_ENABLE_ANAGAIN3, false) ? "on" : "off";
-		Utils.writeValue(FILE_ANAGAIN3, anagain3value);
-		
-		String hsldiggainvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_ENABLE_HSLDIGGAIN, false) ? "on" : "off";
-		Utils.writeValue(FILE_HSLDIGGAIN, hsldiggainvalue);
-		
-		String hsrdiggainvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_ENABLE_HSRDIGGAIN, false) ? "on" : "off";
-		Utils.writeValue(FILE_HSRDIGGAIN, hsrdiggainvalue);
+
 	}
 
 }
