@@ -87,6 +87,9 @@ public class DeviceSettings extends FragmentActivity {
 		mTabsAdapter.addTab(
 				bar.newTab().setText(R.string.category_advanced_title),
 				AdvancedFragmentActivity.class, null);
+		mTabsAdapter.addTab(
+				bar.newTab().setText(R.string.category_audio_title),
+				AudioFragmentActivity.class, null);
 
 		if (savedInstanceState != null) {
 			bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 0));

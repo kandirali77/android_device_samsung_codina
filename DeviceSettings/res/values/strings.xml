@@ -71,6 +71,9 @@
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
     
+    <!-- TAB: AUDIO -->
+    <string name="category_audio_title">Audio</string>
+    
     <!-- CATEGORY: ABBAmp -->
     <string name="abbamp_subcat_title">ABBAmp</string>
     <string name="enable_anagain3_title_head">AnaGain3</string>
