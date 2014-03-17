@@ -36,6 +36,20 @@ public class AudioFragmentActivity extends PreferenceFragment {
 	
 	public static final String FILE_HSRDIGGAIN = "/sys/kernel/abb-codec/hsrdiggain";
 	
+	public static final String FILE_HSLOWPOW = "/sys/kernel/abb-codec/hslowpow";
+	
+	public static final String FILE_HSDACLOWPOW = "/sys/kernel/abb-codec/hsdaclowpow";
+	
+	public static final String FILE_HSHPEN = "/sys/kernel/abb-codec/hshpen";
+	
+	public static final String FILE_CLASSDHPG = "/sys/kernel/abb-codec/classdhpg";
+	
+	public static final String FILE_CLASSDWG = "/sys/kernel/abb-codec/classdwg";
+	
+	public static final String FILE_ADDIGGAIN2 = "/sys/kernel/abb-codec/addiggain2";
+	
+	public static final String FILE_EARDIGGAIN = "/sys/kernel/abb-codec/eardiggain";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,6 +85,48 @@ public class AudioFragmentActivity extends PreferenceFragment {
 					: "off");
 			Utils.writeValue(FILE_HSRDIGGAIN, boxValue);
 		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_HSLOWPOW)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_HSLOWPOW, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_HSDACLOWPOW)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_HSDACLOWPOW, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_HSHPEN)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_HSHPEN, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_CLASSDHPG)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_CLASSDHPG, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_CLASSDWG)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_CLASSDWG, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_ADDIGGAIN2)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_ADDIGGAIN2, boxValue);
+		}
+		
+		if (key.equals(DeviceSettings.KEY_ENABLE_EARDIGGAIN)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
+					: "off");
+			Utils.writeValue(FILE_EARDIGGAIN, boxValue);
+		}
 
 		return true;
 	}
@@ -90,6 +146,34 @@ public class AudioFragmentActivity extends PreferenceFragment {
 		String hsrdiggainvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_ENABLE_HSRDIGGAIN, false) ? "on" : "off";
 		Utils.writeValue(FILE_HSRDIGGAIN, hsrdiggainvalue);
+		
+		String hslowpowvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_HSLOWPOW, false) ? "on" : "off";
+		Utils.writeValue(FILE_HSLOWPOW, hslowpowvalue);
+		
+		String hsdaclowpowvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_HSDACLOWPOW, false) ? "on" : "off";
+		Utils.writeValue(FILE_HSDACLOWPOW, hsdaclowpowvalue);
+		
+		String hshpenvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_HSHPEN, false) ? "on" : "off";
+		Utils.writeValue(FILE_HSHPEN, hshpenvalue);
+		
+		String classdhpgvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_CLASSDHPG, false) ? "on" : "off";
+		Utils.writeValue(FILE_CLASSDHPG, classdhpgvalue);
+		
+		String classdwgvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_CLASSDWG, false) ? "on" : "off";
+		Utils.writeValue(FILE_CLASSDWG, classdwgvalue);
+		
+		String addiggain2value = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_ADDIGGAIN2, false) ? "on" : "off";
+		Utils.writeValue(FILE_ADDIGGAIN2, addiggain2value);
+		
+		String eardiggainvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_EARDIGGAIN, false) ? "on" : "off";
+		Utils.writeValue(FILE_EARDIGGAIN, eardiggainvalue);
 	}
 
 }
