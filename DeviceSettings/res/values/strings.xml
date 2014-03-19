@@ -71,6 +71,11 @@
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Unlock device with a swype</string>
     
+    <!-- CATEGORY: TCP -->
+    <string name="tcp_subcat_title">TCP</string>
+    <string name="tcp_title_head">TCP Congestion Avoidance Algorithm</string>
+    <string name="tcp_summary_head">Switching the algorithm affects your download and upload speeds and latency.</string>
+    
     <!-- TAB: AUDIO -->
     <string name="category_audio_title">Audio</string>
     
