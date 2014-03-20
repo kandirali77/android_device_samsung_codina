@@ -21,15 +21,12 @@ import com.cyanogenmod.settings.device.R;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
-import java.lang.Runtime;
-import java.io.IOException;
 
 public class AdvancedFragmentActivity extends PreferenceFragment {
 
@@ -65,20 +62,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 			Utils.writeValue(FILE_SPI_CRC, boxValue);
 		}
 
-		if (key.equals(DeviceSettings.KEY_SWITCH_STORAGE)) {
-			boolean b = ((CheckBoxPreference) preference).isChecked();
-			String cmd = "SwapStorages.sh " + (b?"1":"0");
-
-			try {
-			    Process proc = Runtime.getRuntime().exec(new String[]{"su","-c",cmd});
-			    proc.waitFor();
-			} catch (IOException e) {
-			    e.printStackTrace();
-			} catch (InterruptedException e) {
-			    e.printStackTrace();
-			}
-		}
-
 		if (key.equals(DeviceSettings.KEY_USE_SWEEP2WAKE)) {
 			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
 					: "off");
@@ -101,11 +84,6 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		String crcvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1";
 		Utils.writeValue(FILE_SPI_CRC, crcvalue);
-
-		int sstor = SystemProperties.getInt("persist.sys.vold.switchexternal", 0) ;
-		SharedPreferences.Editor editor = sharedPrefs.edit();
-		editor.putBoolean(DeviceSettings.KEY_SWITCH_STORAGE,sstor==1?true:false);
-		editor.commit();
 
 		String s2wvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SWEEP2WAKE, false) ? "on" : "off";
