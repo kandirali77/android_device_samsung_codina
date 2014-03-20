@@ -60,6 +60,7 @@ public class DeviceSettings extends FragmentActivity {
 	public static final String KEY_ENABLE_CLASSDWG = "enable_classdwg";
 	public static final String KEY_ENABLE_ADDIGGAIN2 = "enable_addiggain2";
 	public static final String KEY_ENABLE_EARDIGGAIN = "enable_eardiggain";
+	public static final String KEY_ANAGAIN3_CONTROL = "anagain3_control";
 
 	ViewPager mViewPager;
 	TabsAdapter mTabsAdapter;
