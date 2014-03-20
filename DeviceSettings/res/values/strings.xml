@@ -70,6 +70,10 @@
     <string name="touchscreen_subcat_title">Touchscreen</string>
     <string name="use_sweep2wake_title_head">Sweep2Wake</string>
     <string name="use_sweep2wake_summary_head">Unlock device with a swipe</string>
+    <string name="x_sweep2wake_title_head">S2W Threshold X</string>
+    <string name="x_sweep2wake_summary_head">Tweak the x-axis threshold value of swiping.</string>
+    <string name="y_sweep2wake_title_head">S2W Threshold Y</string>
+    <string name="y_sweep2wake_summary_head">Tweak the y-axis threshold value of swiping.</string>
     
     <!-- CATEGORY: TCP -->
     <string name="tcp_subcat_title">TCP</string>
