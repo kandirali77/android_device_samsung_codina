@@ -76,6 +76,11 @@
     <string name="tcp_title_head">TCP Congestion Avoidance Algorithm</string>
     <string name="tcp_summary_head">Switching the algorithm affects your download and upload speeds and latency.</string>
     
+    <!-- CATEGORY: WIFI -->
+    <string name="wifi_subcat_title">Wifi</string>
+    <string name="use_wifipm_max_title_head">Use Wifi PM_MAX mode</string>
+    <string name="use_wifipm_max_summary_head">Using PM_MAX saves power, but internet speed is reduced.</string>
+
     <!-- TAB: AUDIO -->
     <string name="category_audio_title">Audio</string>
     

@@ -39,6 +39,8 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	public static final String FILE_SPI_CRC = "/sys/module/mmc_core/parameters/use_spi_crc";
 
+	public static final String FILE_WIFI_PM = "/sys/module/dhd/parameters/dhdpm_fast";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -81,9 +83,14 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
 					: "off");
 			Utils.writeValue(FILE_SWEEP2WAKE, boxValue);
-
 		}
-		
+
+		if (key.equals(DeviceSettings.KEY_USE_WIFIPM_MAX)) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "0"
+					: "1");
+			Utils.writeValue(FILE_WIFI_PM, boxValue);
+		}
+
 		return true;
 	}
 
@@ -94,7 +101,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		String crcvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1";
 		Utils.writeValue(FILE_SPI_CRC, crcvalue);
-	
+
 		int sstor = SystemProperties.getInt("persist.sys.vold.switchexternal", 0) ;
 		SharedPreferences.Editor editor = sharedPrefs.edit();
 		editor.putBoolean(DeviceSettings.KEY_SWITCH_STORAGE,sstor==1?true:false);
@@ -103,6 +110,10 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		String s2wvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SWEEP2WAKE, false) ? "on" : "off";
 		Utils.writeValue(FILE_SWEEP2WAKE, s2wvalue);
+
+		String wifipmvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_WIFIPM_MAX, false) ? "0" : "1";
+		Utils.writeValue(FILE_WIFI_PM, wifipmvalue);
 
 	}
 
