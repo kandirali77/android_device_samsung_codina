@@ -2,11 +2,9 @@
 
     <!-- Settings list entries-->
     <string-array name="settings_entries">
-        <item>Network</item>
+        <item>General</item>
         <item>USB</item>
         <item>Audio</item>
-        <item>Screen</item>
-        <item>PowerSaving</item>
         <item>Advanced</item>
     </string-array>
 
