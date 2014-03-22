@@ -41,7 +41,7 @@ public class Hspa extends ListPreference implements OnPreferenceChangeListener {
 	}
 
 	/**
-	 * Restore hspa setting from SharedPreferences. (Write to kernel.)
+	 * Restore HSPA setting from SharedPreferences. (Write to kernel.)
 	 * 
 	 * @param context
 	 *            The context to read the SharedPreferences from

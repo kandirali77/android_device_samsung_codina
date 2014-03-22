@@ -6,6 +6,29 @@
             android:key="use_sweep2wake"
             android:summary="@string/use_sweep2wake_summary_head"
             android:title="@string/use_sweep2wake_title_head" />
+        <com.cyanogenmod.settings.device.S2WThreshold
+            android:key="x_sweep2wake"
+            android:summary="@string/x_sweep2wake_summary_head"
+            android:title="@string/x_sweep2wake_title_head"
+            android:digits="123456789"
+            android:inputType="number"
+            android:defaultValue="120" />
+        <com.cyanogenmod.settings.device.S2WThreshold
+            android:key="y_sweep2wake"
+            android:summary="@string/y_sweep2wake_summary_head"
+            android:title="@string/y_sweep2wake_title_head"
+            android:digits="123456789"
+            android:inputType="number"
+            android:defaultValue="240" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/scheduler_subcat_title" >
+        <com.cyanogenmod.settings.device.SchedMC
+            android:defaultValue="0"
+            android:entries="@array/sched_mc_entries"
+            android:entryValues="@array/sched_mc_entries_values"
+            android:key="sched_mc"
+            android:summary="@string/sched_mc_summary_head"
+            android:title="@string/sched_mc_title_head" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/deepsleep_subcat_title" >
         <com.cyanogenmod.settings.device.DeepestSleepState
