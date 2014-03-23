@@ -119,15 +119,15 @@
 
     <!-- CATEGORY: ADVANCED -->
 
-    <!-- SUBCATEGORY: BLN -->
-    <string name="backlight_subcat_title">Backlight</string>
-    <string name="disable_bln_title_head">Disable BLN</string>
-    <string name="disable_bln_summary_head">You won\'t be able to be notified of notifications through your backlight if BLN is disabled.</string>
-
     <!-- SUBCATEGORY: STORAGE -->
     <string name="storage_subcat_title">Storage</string>
     <string name="switch_storage_title_head">Swap Storages</string>
     <string name="switch_storage_summary_head">Switches internal storage partition with external sd-card. Reboot required.</string>
+
+   <!-- SUBCATEGORY: BLN -->
+    <string name="backlight_subcat_title">Backlight</string>
+    <string name="disable_bln_title_head">Disable BLN</string>
+    <string name="disable_bln_summary_head">You won\'t be able to be notified of notifications through your backlight if BLN is disabled.</string>
 
     <!-- SUBCATEGORY: MMC -->
     <string name="mmc_subcat_title">MMC</string>
