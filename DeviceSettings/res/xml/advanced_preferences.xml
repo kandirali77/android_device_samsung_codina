@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <PreferenceCategory android:title="@string/backlight_subcat_title" >
+        <CheckBoxPreference
+            android:key="disable_bln"
+            android:summary="@string/disable_bln_summary_head"
+            android:title="@string/disable_bln_title_head" />
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/storage_subcat_title" >
         <CheckBoxPreference
             android:key="switch_storage"

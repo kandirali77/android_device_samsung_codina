@@ -40,6 +40,7 @@ public class ContainerActivity extends Activity {
 	public static final String KEY_ANAGAIN3_CONTROL = "anagain3_control";
 	public static final String KEY_USE_WIFIPM_MAX = "use_wifipm_max";
 	public static final String KEY_SCHED_MC = "sched_mc";
+	public static final String KEY_DISABLE_BLN = "disable_bln";
 
 	FrameLayout frameLayout;
 

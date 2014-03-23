@@ -32,7 +32,7 @@ public class PowermgmtFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_Advanced";
 
-	public static final String FILE_WIFI_PM = "/sys/module/dhd/parameters/dhdpm_fast";
+	private static final String FILE_WIFI_PM = "/sys/module/dhd/parameters/dhdpm_fast";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
