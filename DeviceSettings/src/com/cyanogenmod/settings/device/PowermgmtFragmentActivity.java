@@ -40,7 +40,7 @@ public class PowermgmtFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.powermgmt_preferences);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
+//		PreferenceScreen prefSet = getPreferenceScreen();
 	}
 
 	@Override

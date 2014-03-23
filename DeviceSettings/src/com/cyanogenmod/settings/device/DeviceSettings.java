@@ -58,7 +58,7 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int index, long arg3) {
 		Intent intent = new Intent(this, ContainerActivity.class);
-		intent.putExtra(SELECTION, index);			
+		intent.putExtra(SELECTION, index);
 		startActivity(intent);		
 	}
 

@@ -40,7 +40,7 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.screen_preferences);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
+//		PreferenceScreen prefSet = getPreferenceScreen();
 	}
 
 	@Override
