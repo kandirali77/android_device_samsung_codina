@@ -16,24 +16,29 @@
 
 package com.cyanogenmod.settings.device;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import com.cyanogenmod.settings.device.R;
 
-public class Startup extends BroadcastReceiver {
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
+import android.util.Log;
+
+public class NetworkFragmentActivity extends PreferenceFragment {
+
+	private static final String TAG = "GalaxyAce2_Settings_Network";
 
 	@Override
-	public void onReceive(final Context context, final Intent bootintent) {
-		USBFragmentActivity.restore(context);
-		ChargerCurrency.restore(context);
-		UsbCurrency.restore(context);
-		AudioFragmentActivity.restore(context);
-		ScreenFragmentActivity.restore(context);
-		FsyncMode.restore(context);
-		MaliL2MaxReads.restore(context);
-		MaliPreAllocMem.restore(context);
-		PowermgmtFragmentActivity.restore(context);
-		DeepestSleepState.restore(context);
-		AdvancedFragmentActivity.restore(context);
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		addPreferencesFromResource(R.xml.network_preferences);
+
+		// PreferenceScreen prefSet = getPreferenceScreen();
 	}
+
 }

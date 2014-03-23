@@ -24,12 +24,14 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-		
-		<activity android:name=".GeneralFragmentActivity" />
-        <activity android:name=".USBFragmentActivity" />
-        <activity android:name=".AdvancedFragmentActivity" />
-      	<activity android:name=".AudioFragmentActivity" />
+
 		<activity android:name=".ContainerActivity" />
+		<activity android:name=".NetworkFragmentActivity" />
+		<activity android:name=".USBFragmentActivity" />
+		<activity android:name=".AudioFragmentActivity" />
+		<activity android:name=".ScreenFragmentActivity" />
+		<activity android:name=".PowermgmtFragmentActivity" />
+		<activity android:name=".AdvancedFragmentActivity" />
         
     </application>
 </manifest>

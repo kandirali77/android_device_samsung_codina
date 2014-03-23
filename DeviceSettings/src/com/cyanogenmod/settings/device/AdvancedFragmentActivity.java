@@ -21,22 +21,23 @@ import com.cyanogenmod.settings.device.R;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
+import java.lang.Runtime;
+import java.io.IOException;
 
 public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_Advanced";
-	
-	public static final String FILE_SWEEP2WAKE = "/sys/kernel/bt404/sweep2wake";
+
+	private static final String FILE_ACCELEROMETER_CALIB = "/sys/class/sensors/accelerometer_sensor/calibration";
 
 	public static final String FILE_SPI_CRC = "/sys/module/mmc_core/parameters/use_spi_crc";
-
-	public static final String FILE_WIFI_PM = "/sys/module/dhd/parameters/dhdpm_fast";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,22 +57,38 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 		Log.w(TAG, "key: " + key);
 
+		if (key.equals(DeviceSettings.KEY_SWITCH_STORAGE)) {
+			boolean b = ((CheckBoxPreference) preference).isChecked();
+			String cmd = "SwapStorages.sh " + (b?"1":"0");
+
+			try {
+			    Process proc = Runtime.getRuntime().exec(new String[]{"su","-c",cmd});
+			    proc.waitFor();
+			} catch (IOException e) {
+			    e.printStackTrace();
+			} catch (InterruptedException e) {
+			    e.printStackTrace();
+			}
+		}
+
 		if (key.equals(DeviceSettings.KEY_USE_SPI_CRC)) {
 			boxValue = (((CheckBoxPreference) preference).isChecked() ? "0"
 					: "1");
 			Utils.writeValue(FILE_SPI_CRC, boxValue);
 		}
 
-		if (key.equals(DeviceSettings.KEY_USE_SWEEP2WAKE)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "on"
-					: "off");
-			Utils.writeValue(FILE_SWEEP2WAKE, boxValue);
-		}
-
-		if (key.equals(DeviceSettings.KEY_USE_WIFIPM_MAX)) {
-			boxValue = (((CheckBoxPreference) preference).isChecked() ? "0"
-					: "1");
-			Utils.writeValue(FILE_WIFI_PM, boxValue);
+		if (key.compareTo(DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION) == 0) {
+			boxValue = (((CheckBoxPreference) preference).isChecked() ? "1"
+					: "0");
+			Utils.writeValue(FILE_ACCELEROMETER_CALIB, boxValue);
+		} else if (key.compareTo(DeviceSettings.KEY_CALIBRATE_ACCELEROMETER) == 0) {
+			// when calibration data utilization is disabled and enabled back,
+			// calibration is done at the same time by driver
+			Utils.writeValue(FILE_ACCELEROMETER_CALIB, "0");
+			Utils.writeValue(FILE_ACCELEROMETER_CALIB, "1");
+			Utils.showDialog((Context) getActivity(),
+					getString(R.string.accelerometer_dialog_head),
+					getString(R.string.accelerometer_dialog_message));
 		}
 
 		return true;
@@ -81,17 +98,19 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 
+		int sstor = SystemProperties.getInt("persist.sys.vold.switchexternal", 0) ;
+		SharedPreferences.Editor editor = sharedPrefs.edit();
+		editor.putBoolean(DeviceSettings.KEY_SWITCH_STORAGE,sstor==1?true:false);
+		editor.commit();
+
 		String crcvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USE_SPI_CRC, false) ? "0" : "1";
 		Utils.writeValue(FILE_SPI_CRC, crcvalue);
 
-		String s2wvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_SWEEP2WAKE, false) ? "on" : "off";
-		Utils.writeValue(FILE_SWEEP2WAKE, s2wvalue);
-
-		String wifipmvalue = sharedPrefs.getBoolean(
-				DeviceSettings.KEY_USE_WIFIPM_MAX, false) ? "0" : "1";
-		Utils.writeValue(FILE_WIFI_PM, wifipmvalue);
+		boolean accelerometerCalib = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION, true);
+		if (!accelerometerCalib)
+			Utils.writeValue(FILE_ACCELEROMETER_CALIB, "0");
 
 	}
 
