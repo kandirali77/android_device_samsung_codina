@@ -129,6 +129,9 @@
     <string name="disable_bln_title_head">Disable BLN</string>
     <string name="disable_bln_summary_head">You won\'t be able to be notified of notifications through your backlight if BLN is disabled.</string>
 
+    <!-- SUBCATEGORY: Scheduler -->
+    <string name="readaheadkb_dialog_message">Select the readahead buffer size.</string>
+    <string name="readaheadkb_title_head">Readahead buffer size</string>
     <!-- SUBCATEGORY: MMC -->
     <string name="mmc_subcat_title">MMC</string>
     <string name="use_spi_crc_title_head">Disable SPI CRC</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyanogenmod="http://schemas.android.com/apk/res-auto" >
 
     <PreferenceCategory android:title="@string/storage_subcat_title" >
         <CheckBoxPreference
@@ -14,6 +15,17 @@
             android:summary="@string/disable_bln_summary_head"
             android:title="@string/disable_bln_title_head" />
     </PreferenceCategory>
+    
+   <PreferenceCategory android:title="@string/scheduler_subcat_title" >
+       <com.cyanogenmod.setting.device.ReadaheadkB
+           android:defaultValue="512"
+           android:dialogMessage="@string/readaheadkb_dialog_message"
+           android:max="4096"
+           cyanogenmod:min="128"
+           cyanogenmod:progressTextSuffix="kB"
+           android:key="readaheadkb"
+           android:title="@string/readaheadkb_title_head" />
+   </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/mmc_subcat_title" >
         <CheckBoxPreference
