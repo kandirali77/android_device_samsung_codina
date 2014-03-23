@@ -11,7 +11,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class SeekBarDialogPreference extends DialogPreference {
+public class CustomSeekBarDialogPreference extends DialogPreference {
     private static final int DEFAULT_MIN_PROGRESS = 0;
     private static final int DEFAULT_MAX_PROGRESS = 100;
     private static final int DEFAULT_PROGRESS = 0;
@@ -23,22 +23,22 @@ public class SeekBarDialogPreference extends DialogPreference {
     private TextView mProgressText;
     private SeekBar mSeekBar;
  
-    public SeekBarDialogPreference(Context context)
+    public CustomSeekBarDialogPreference(Context context)
     {
         this(context, null);
     }
  
-    public SeekBarDialogPreference(Context context, AttributeSet attrs)
+    public CustomSeekBarDialogPreference(Context context, AttributeSet attrs)
     {
         super(context, attrs);
  
         // get attributes specified in XML
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SeekBarDialogPreference, 0, 0);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomSeekBarDialogPreference, 0, 0);
         try
         {
-            setMinProgress(a.getInteger(R.styleable.SeekBarDialogPreference_min, DEFAULT_MIN_PROGRESS));
-            setMaxProgress(a.getInteger(R.styleable.SeekBarDialogPreference_android_max, DEFAULT_MAX_PROGRESS));
-            setProgressTextSuffix(a.getString(R.styleable.SeekBarDialogPreference_progressTextSuffix));
+            setMinProgress(a.getInteger(R.styleable.CustomSeekBarDialogPreference_min, DEFAULT_MIN_PROGRESS));
+            setMaxProgress(a.getInteger(R.styleable.CustomSeekBarDialogPreference_android_max, DEFAULT_MAX_PROGRESS));
+            setProgressTextSuffix(a.getString(R.styleable.CustomSeekBarDialogPreference_progressTextSuffix));
         }
         finally
         {
