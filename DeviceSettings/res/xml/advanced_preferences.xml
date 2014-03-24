@@ -17,7 +17,7 @@
     </PreferenceCategory>
     
    <PreferenceCategory android:title="@string/scheduler_subcat_title" >
-       <com.cyanogenmod.settings.device.ReadaheadkB
+       <com.teamcanjica.settings.device.ReadaheadkB
            android:defaultValue="512"
            android:dialogMessage="@string/readaheadkb_dialog_message"
            android:max="4096"
