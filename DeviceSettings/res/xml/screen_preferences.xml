@@ -10,14 +10,14 @@
             android:key="x_sweep2wake"
             android:summary="@string/x_sweep2wake_summary_head"
             android:title="@string/x_sweep2wake_title_head"
-            android:digits="123456789"
+            android:digits="0123456789"
             android:inputType="number"
             android:defaultValue="120" />
         <com.cyanogenmod.settings.device.S2WThreshold
             android:key="y_sweep2wake"
             android:summary="@string/y_sweep2wake_summary_head"
             android:title="@string/y_sweep2wake_title_head"
-            android:digits="123456789"
+            android:digits="0123456789"
             android:inputType="number"
             android:defaultValue="240" />
     </PreferenceCategory>

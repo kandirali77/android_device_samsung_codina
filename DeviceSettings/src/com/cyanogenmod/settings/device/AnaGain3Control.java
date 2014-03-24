@@ -5,15 +5,8 @@ import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
-import android.widget.SeekBar;
 
 public class AnaGain3Control extends CustomSeekBarDialogPreference {
-	
-	private static final int DEFAULT_MIN_PROGRESS = 0;
-    private static final int DEFAULT_MAX_PROGRESS = 100;
- 
-    private int mMinProgress;
-    private SeekBar mSeekBar;
     
     private static final String FILE = " /sys/kernel/abb-codec/anagain3";
 

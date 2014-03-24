@@ -47,7 +47,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.advanced_preferences);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
+//		PreferenceScreen prefSet = getPreferenceScreen();
 	}
 
 	@Override

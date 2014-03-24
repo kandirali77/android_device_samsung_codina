@@ -34,10 +34,10 @@ public class TCPControl extends ListPreference implements
 		this.setOnPreferenceChangeListener(this);
 	}
 	
-	static Process process;
-	static String newValueString;
+	Process process;
+	String newValueString;
 	
-	final static String[] COMMAND = {
+	String[] COMMAND = {
 			"su", "-c",
 			"busybox sysctl -w net.ipv4.tcp_congestion_control=" +
 			newValueString
@@ -49,7 +49,7 @@ public class TCPControl extends ListPreference implements
 	 * @param context
 	 *            The context to read the SharedPreferences from
 	 */
-	public static void restore(Context context) {
+	public void restore(Context context) {
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		newValueString = sharedPrefs.getString(DeviceSettings.KEY_TCP_CONTROL, "cubic");
