@@ -13,11 +13,10 @@
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
 
-    <application android:label="@string/app_name"
-            android:icon="@drawable/ace2settings_icon"
-            android:allowBackup="true" >
+    <application android:allowBackup="true" >
         <activity
             android:name="com.teamcanjica.settings.device.DeviceSettings"
+            android:icon="@drawable/ace2settings_icon"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,21 +33,28 @@
 		<activity android:name="com.teamcanjica.settings.device.ContainerActivity" />
 
 		<activity android:name="com.teamcanjica.settings.device.NetworkFragmentActivity"
-				android:icon="@drawable/network_icon" />
+				android:icon="@drawable/network_icon"
+				android:label="@string/network_name" />
 
 		<activity android:name="com.teamcanjica.settings.device.USBFragmentActivity"
-				android:icon="@drawable/usb_icon" />
+				android:icon="@drawable/usb_icon"
+				android:label="@string/usb_name" />
 
 		<activity android:name="com.teamcanjica.settings.device.AudioFragmentActivity"
-				android:icon="@drawable/audio_icon" />
+				android:icon="@drawable/audio_icon"
+				android:label="@string/audio_name" />
 
 		<activity android:name="com.teamcanjica.settings.device.ScreenFragmentActivity"
-				android:icon="@drawable/screen_icon" />
+				android:icon="@drawable/screen_icon"
+				android:label="@string/screen_name" />
 
 		<activity android:name="com.teamcanjica.settings.device.PowermgmtFragmentActivity"
-				android:icon="@drawable/powermgmt_icon" />
+				android:icon="@drawable/powermgmt_icon"
+				android:label="@string/powermgmt_name" />
 
-		<activity android:name="com.teamcanjica.settings.device.AdvancedFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.AdvancedFragmentActivity"
+				android:label="@string/advanced_name" 
+				android:icon="@drawable/ace2settings_icon" />
 
     </application>
 </manifest>
