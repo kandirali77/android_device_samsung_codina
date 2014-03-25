@@ -3,6 +3,12 @@
 
     <!-- App name -->
     <string name="app_name">Galaxy Ace 2 Settings</string>
+    <string name="network_name">Network</string>
+    <string name="usb_name">USB</string>
+    <string name="audio_name">Audio</string>
+    <string name="screen_name">Screen</string>
+    <string name="powermgmt_name">Power Management</string>
+    <string name="advanced_name">Advanced</string>
     <string name="image">Thumbnail</string>
 
     <!-- CATEGORY: Network -->
