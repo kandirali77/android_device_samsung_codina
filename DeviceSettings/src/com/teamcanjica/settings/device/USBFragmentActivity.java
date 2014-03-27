@@ -32,12 +32,6 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxyAce2_Settings_USB";
 	private static final String FILE = "/sys/kernel/abb-regu/VOTG";
 
-	@Override
-	protected void onCreateView(Bundle savedInstanceState) {
-		super.onCreateView(savedInstanceState);
-		getActionBar().setTitle(getResources().getString(R.string.usb_name));
-		getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));   
-	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +47,9 @@ public class USBFragmentActivity extends PreferenceFragment {
 				UsbCurrency.isSupported());
 		prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(
 				isSupported(FILE));
+				
+		getActionBar().setTitle(getResources().getString(R.string.usb_name));
+		getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
 
 	}
 

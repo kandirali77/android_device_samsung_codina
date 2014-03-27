@@ -41,14 +41,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 	private static final String FILE_BLN = "/sys/class/misc/backlightnotification/enabled";
 
-	private static final String FILE_UKSM = "/sys/kernel/mm/uksm/run";
-
-	@Override
-	protected void onCreateView(Bundle savedInstanceState) {
-		super.onCreateView(savedInstanceState);
-		getActionBar().setTitle(getResources().getString(R.string.advanced_name));
-		getActionBar().setIcon(getResources().getDrawable(R.drawable.ace2settings_icon));   
-	}
+	private static final String FILE_UKSM = "/sys/kernel/mm/uksm/run";		  
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +49,8 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.advanced_preferences);
 
-//		PreferenceScreen prefSet = getPreferenceScreen();
+		getActionBar().setTitle(getResources().getString(R.string.advanced_name));
+		getActionBar().setIcon(getResources().getDrawable(R.drawable.ace2settings_icon));
 	}
 
 	@Override

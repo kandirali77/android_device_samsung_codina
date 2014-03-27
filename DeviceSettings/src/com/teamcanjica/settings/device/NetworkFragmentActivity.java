@@ -26,19 +26,13 @@ public class NetworkFragmentActivity extends PreferenceFragment {
 //	private static final String TAG = "GalaxyAce2_Settings_Network";
 
 	@Override
-	protected void onCreateView(Bundle savedInstanceState) {
-		super.onCreateView(savedInstanceState);
-		getActionBar().setTitle(getResources().getString(R.string.network_name));
-		getActionBar().setIcon(getResources().getDrawable(R.drawable.network_icon));   
-	}
-
-	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		addPreferencesFromResource(R.xml.network_preferences);
 
-//		// PreferenceScreen prefSet = getPreferenceScreen();
+		getActionBar().setTitle(getResources().getString(R.string.network_name));
+		getActionBar().setIcon(getResources().getDrawable(R.drawable.network_icon));
 	}
 
 }
