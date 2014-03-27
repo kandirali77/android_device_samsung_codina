@@ -51,7 +51,14 @@ public class AudioFragmentActivity extends PreferenceFragment {
 	public static final String FILE_ADDIGGAIN2 = "/sys/kernel/abb-codec/addiggain2";
 	
 	public static final String FILE_EARDIGGAIN = "/sys/kernel/abb-codec/eardiggain";
-	
+
+	@Override
+	protected void onCreateView(Bundle savedInstanceState) {
+		super.onCreateView(savedInstanceState);
+		getActionBar().setTitle(getResources().getString(R.string.audio_name));
+		getActionBar().setIcon(getResources().getDrawable(R.drawable.audio_icon));   
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -33,6 +33,13 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String FILE = "/sys/kernel/abb-regu/VOTG";
 
 	@Override
+	protected void onCreateView(Bundle savedInstanceState) {
+		super.onCreateView(savedInstanceState);
+		getActionBar().setTitle(getResources().getString(R.string.usb_name));
+		getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));   
+	}
+
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 

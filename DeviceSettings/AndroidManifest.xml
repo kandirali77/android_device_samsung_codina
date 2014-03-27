@@ -13,10 +13,11 @@
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
 
-    <application android:allowBackup="true" >
+    <application android:label="@string/app_name"
+            android:icon="@drawable/ace2settings_icon"
+            android:allowBackup="true" >
         <activity
             android:name="com.teamcanjica.settings.device.DeviceSettings"
-            android:icon="@drawable/ace2settings_icon"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,48 +32,12 @@
         </receiver>
 
 		<activity android:name="com.teamcanjica.settings.device.ContainerActivity" />
-
-		<activity android:name="com.teamcanjica.settings.device.NetworkFragmentActivity"
-				android:icon="@drawable/network_icon"
-				android:label="@string/network_name">
-					<intent-filter andoid:icon="@drawable/network_icon"
-					android:label="@string/network_name"/>
-				</activity>
-
-		<activity android:name="com.teamcanjica.settings.device.USBFragmentActivity"
-				android:icon="@drawable/usb_icon"
-				android:label="@string/usb_name" >
-					<intent-filter andoid:icon="@drawable/usb_icon"
-					android:label="@string/usb_name"/>
-				</activity>
-
-		<activity android:name="com.teamcanjica.settings.device.AudioFragmentActivity"
-				android:icon="@drawable/audio_icon"
-				android:label="@string/audio_name">
-					<intent-filter andoid:icon="@drawable/audio_icon"
-					android:label="@string/audio_name"/>
-				</activity>
-
-		<activity android:name="com.teamcanjica.settings.device.ScreenFragmentActivity"
-				android:icon="@drawable/screen_icon"
-				android:label="@string/screen_name">
-					<intent-filter andoid:icon="@drawable/screen_icon"
-					android:label="@string/screen_name"/>
-				</activity>
-
-		<activity android:name="com.teamcanjica.settings.device.PowermgmtFragmentActivity"
-				android:icon="@drawable/powermgmt_icon"
-				android:label="@string/powermgmt_name">
-				<intent-filter andoid:icon="@drawable/powermgmt_icon"
-					android:label="@string/powermgmt_name"/>
-					</activity>
-
-		<activity android:name="com.teamcanjica.settings.device.AdvancedFragmentActivity"
-				android:label="@string/advanced_name" 
-				android:icon="@drawable/ace2settings_icon">
-					<intent-filter andoid:icon="@drawable/advanced_icon"
-					android:label="@string/advanced_name"/>
-				</activity>
-
+		<activity android:name="com.teamcanjica.settings.device.NetworkFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.USBFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.AudioFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.ScreenFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.PowermgmtFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.AdvancedFragmentActivity" />
+        
     </application>
 </manifest>
