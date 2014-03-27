@@ -104,7 +104,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 		if (key.equals(DeviceSettings.KEY_ENABLE_UKSM)) {
 			boxValue = (((CheckBoxPreference) preference).isChecked() ? "1"
 					: "0");
-			Utils.writeValue(FILE_BLN, boxValue);
+			Utils.writeValue(FILE_UKSM, boxValue);
 		}
 
 		return true;
