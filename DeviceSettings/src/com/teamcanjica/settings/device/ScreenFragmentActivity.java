@@ -18,7 +18,6 @@ package com.teamcanjica.settings.device;
 
 import com.teamcanjica.settings.device.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,8 +41,8 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 
 		addPreferencesFromResource(R.xml.screen_preferences);
 
-		getActionBar().setTitle(getResources().getString(R.string.screen_name));
-		getActionBar().setIcon(getResources().getDrawable(R.drawable.screen_icon));
+		getActivity().getActionBar().setTitle(getResources().getString(R.string.screen_name));
+		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.screen_icon));
 	}
 
 	@Override
