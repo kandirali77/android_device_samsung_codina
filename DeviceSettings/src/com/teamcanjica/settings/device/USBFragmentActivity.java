@@ -17,6 +17,7 @@
 package com.teamcanjica.settings.device;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -78,6 +79,11 @@ public class USBFragmentActivity extends PreferenceFragment {
 	}
 
 	public static void restore(Context context) {
-		PreferenceManager.getDefaultSharedPreferences(context);
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+
+		String votgvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USB_OTG_POWER, false) ? "1" : "0";
+		Utils.writeValue(FILE, votgvalue);
 	}
 }
