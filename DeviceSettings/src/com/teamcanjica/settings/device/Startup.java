@@ -24,6 +24,7 @@ public class Startup extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(final Context context, final Intent bootintent) {
+		TCPControl.restore(context);
 		USBFragmentActivity.restore(context);
 		ChargerCurrency.restore(context);
 		UsbCurrency.restore(context);
