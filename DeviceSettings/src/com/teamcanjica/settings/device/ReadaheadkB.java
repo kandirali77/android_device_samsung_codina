@@ -15,7 +15,7 @@ public class ReadaheadkB extends CustomSeekBarDialogPreference implements OnPref
 	}
 
 	private static final String FILE = "/sys/block/mmcblk0/queue/read_ahead_kb";
-   
+
 	public static boolean isSupported() {
 		return Utils.fileExists(FILE);
 	}
@@ -39,7 +39,7 @@ public class ReadaheadkB extends CustomSeekBarDialogPreference implements OnPref
 
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
-		Utils.writeValue(FILE, (String) newValue);
+		Utils.writeValue(FILE, String.valueOf((Integer) newValue));
 		return true;
 	}
 
