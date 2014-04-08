@@ -45,22 +45,12 @@
     </string-array>
     
     <!-- USB -->
-    <string-array name="cc_currency_usb_entries">
-        <item>800 mA *WARNING*</item>
-        <item>600 mA (fast charge)</item>
-        <item>400 mA</item>
-    </string-array>
-    <string-array name="cc_currency_usb_entries_values" translatable="false">
-        <item>800</item>
-        <item>600</item>
-        <item>400</item>
-    </string-array>
-    <string-array name="cc_currency_charger_entries">
+    <string-array name="charger_currency_entries">
         <item>800 mA   *WARNING*</item>
         <item>600 mA (default)</item>
         <item>400 mA</item>
     </string-array>
-    <string-array name="cc_currency_charger_entries_values" translatable="false">
+    <string-array name="charger_currency_entries_values" translatable="false">
         <item>800</item>
         <item>600</item>
         <item>400</item>

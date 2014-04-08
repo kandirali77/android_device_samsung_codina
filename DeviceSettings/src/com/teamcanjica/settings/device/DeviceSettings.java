@@ -22,8 +22,7 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String KEY_CALIBRATE_ACCELEROMETER = "calibrate_accelerometer";
 	public static final String KEY_USB_OTG_POWER = "usb_otg_power";
 	public static final String KEY_DEEPEST_SLEEP_STATE = "deepest_sleep_state";
-	public static final String KEY_AC_CURRENCY = "ac_currency";
-	public static final String KEY_USB_CURRENCY = "usb_currency";
+	public static final String KEY_CHARGER_CURRENCY = "charger_currency";
 	public static final String KEY_FSYNC_MODE = "fsync_mode";
 	public static final String KEY_TCP_CONTROL = "tcp_control";
 	public static final String KEY_MALI_L2MR = "mali_l2_mr";
