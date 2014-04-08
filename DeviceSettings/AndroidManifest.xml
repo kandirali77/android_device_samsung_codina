@@ -38,6 +38,7 @@
 		<activity android:name="com.teamcanjica.settings.device.ScreenFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.PowermgmtFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.AdvancedFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.GPUFragmentActivity" />
         
     </application>
 </manifest>

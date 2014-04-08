@@ -26,7 +26,6 @@ public class Startup extends BroadcastReceiver {
 	public void onReceive(final Context context, final Intent bootintent) {
 		USBFragmentActivity.restore(context);
 		ChargerCurrency.restore(context);
-		UsbCurrency.restore(context);
 		AudioFragmentActivity.restore(context);
 		ScreenFragmentActivity.restore(context);
 		FsyncMode.restore(context);
@@ -38,5 +37,7 @@ public class Startup extends BroadcastReceiver {
 		SchedMC.restore(context);
 		TCPControl.restore(context);
 		ReadaheadkB.restore(context);
+		GPUFragmentActivity.restore(context);
+		
 	}
 }

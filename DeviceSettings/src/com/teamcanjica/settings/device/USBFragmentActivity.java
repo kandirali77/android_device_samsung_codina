@@ -42,13 +42,9 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		PreferenceScreen prefSet = getPreferenceScreen();
 
-		prefSet.findPreference(DeviceSettings.KEY_AC_CURRENCY).setEnabled(
-				ChargerCurrency.isSupported());
-		prefSet.findPreference(DeviceSettings.KEY_USB_CURRENCY).setEnabled(
-				UsbCurrency.isSupported());
 		prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(
 				isSupported(FILE));
-				
+
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.usb_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
 

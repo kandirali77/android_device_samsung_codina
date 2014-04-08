@@ -32,7 +32,7 @@ public class ScreenFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_Screen";
 	
-	public static final String FILE_SWEEP2WAKE = "/sys/kernel/bt404/sweep2wake";
+	private static final String FILE_SWEEP2WAKE = "/sys/kernel/bt404/sweep2wake";
 
 
 	@Override

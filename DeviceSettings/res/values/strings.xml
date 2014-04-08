@@ -152,5 +152,13 @@
     <string name="calibrate_accelerometer_summary_head">Put your phone on a flat surface, and press this to calibrate</string>
     <string name="accelerometer_dialog_head">Calibration done</string>
     <string name="accelerometer_dialog_message">The sensor has been successfully calibrated.</string>
+    
+    <!-- CATEGORY: GPU -->
+    <string name="gpu_name">GPU</string>
+    
+    <!-- SUBCATEGORY: Clock Speed -->
+    <string name="clock_speed_title">Clock Speed</string>
+    <string name="disable_autoboost_title_head">Disable autoboosting GPU governor</string>
+    <string name="disable_autoboost_summary_head">Disabling it will allow you to manually set static GPU clock speeds.</string>
 
 </resources>
