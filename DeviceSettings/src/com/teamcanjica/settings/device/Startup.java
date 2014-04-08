@@ -38,6 +38,7 @@ public class Startup extends BroadcastReceiver {
 		TCPControl.restore(context);
 		ReadaheadkB.restore(context);
 		GPUFragmentActivity.restore(context);
+		GPUClockSpeed.restore(context);
 		
 	}
 }

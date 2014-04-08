@@ -123,5 +123,57 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    
+    <!-- GPU -->
+    <string-array name="set_gpu_clock_entries_values">
+        <item>256000</item>
+        <item>299520</item>
+        <item>320000</item>
+        <item>360000</item>
+        <item>399360</item>
+        <item>422400</item>
+        <item>441600</item>
+        <item>460800</item>
+        <item>480000</item>
+        <item>499200</item>
+        <item>518400</item>
+        <item>537600</item>
+        <item>560640</item>
+        <item>579840</item>
+        <item>600000</item>
+        <item>619200</item>
+        <item>640000</item>
+        <item>660480</item>
+        <item>679680</item>
+        <item>700800</item>
+        <item>710400</item>
+        <item>720000</item>
+        <item>729600</item>
+    </string-array>
+    <string-array name="set_gpu_clock_entries">
+        <item>260 MHz</item>
+        <item>300 MHz</item>
+        <item>320 MHz</item>
+        <item>360 MHz</item>
+        <item>400 MHz</item>
+        <item>420 MHz</item>
+        <item>440 MHz</item>
+        <item>460 MHz</item>
+        <item>480 MHz</item>
+        <item>500 MHz</item>
+        <item>520 MHz</item>
+        <item>540 MHz</item>
+        <item>560 MHz</item>
+        <item>580 MHz</item>
+        <item>600 MHz</item>
+        <item>620 MHz</item>
+        <item>640 MHz</item>
+        <item>660 MHz</item>
+        <item>680 MHz</item>
+        <item>700 MHz</item>
+        <item>710 MHz</item>
+        <item>720 MHz</item>
+        <item>730 MHz</item>
+    </string-array>
 
 </resources>
