@@ -34,7 +34,7 @@ public class ReadaheadkB extends CustomSeekBarDialogPreference implements OnPref
 		SharedPreferences sharedPrefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		Utils.writeValue(FILE,
-				sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512"));
+				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
 	}
 
 	@Override
