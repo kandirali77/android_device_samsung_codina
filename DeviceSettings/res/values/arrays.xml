@@ -6,6 +6,7 @@
         <item>USB</item>
         <item>Audio</item>
         <item>Screen</item>
+        <item>GPU</item>
         <item>Power Management</item>
         <item>Advanced</item>
     </string-array>

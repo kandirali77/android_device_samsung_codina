@@ -40,10 +40,14 @@ public class ContainerActivity extends Activity {
 			fragment = new ScreenFragmentActivity();
 			break;
 		case 4:
+			// GPU
+			fragment = new GPUFragmentActivity();
+			break;
+		case 5:
 			// Power Management
 			fragment = new PowermgmtFragmentActivity();
 			break;
-		case 5:
+		case 6:
 			// Advanced
 			fragment = new AdvancedFragmentActivity();
 			break;
