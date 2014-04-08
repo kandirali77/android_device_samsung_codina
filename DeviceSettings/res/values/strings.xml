@@ -28,8 +28,10 @@
 
     <!-- SUBCATEGORY: Charger Control -->
     <string name="cc_subcat_title">Charger control</string>
+    <string name="use_cc_title_head">Use Charger Control</string>
+    <string name="use_cc_summary_head">Enables Charger Control</string>
     <string name="cc_title_head">Charger currency</string>
-    <string name="cc_summary_head">Charger currency in mAh, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
+    <string name="cc_summary_head">Charger currency in mA, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
 
     <!-- CATEGORY: AUDIO -->
     <string name="audio_name">Audio</string>

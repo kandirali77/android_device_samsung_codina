@@ -12,6 +12,10 @@
 
     <PreferenceCategory android:title="@string/cc_subcat_title" >
         <!-- Charger control -->
+        <CheckBoxPreference
+            android:key="use_charger_control"
+            android:summary="@string/use_cc_summary_head"
+            android:title="@string/use_cc_title_head" />
         <com.teamcanjica.settings.device.ChargerCurrency
             android:defaultValue="600"
             android:entries="@array/charger_currency_entries"

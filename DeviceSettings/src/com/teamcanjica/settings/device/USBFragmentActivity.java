@@ -31,7 +31,8 @@ import com.teamcanjica.settings.device.R;
 public class USBFragmentActivity extends PreferenceFragment {
 
 	private static final String TAG = "GalaxyAce2_Settings_USB";
-	private static final String FILE = "/sys/kernel/abb-regu/VOTG";
+	private static final String FILE_VOTG = "/sys/kernel/abb-regu/VOTG";
+	private static final String FILE_CHARGER_CONTROL = "/sys/kernel/abb-charger/charger_curr";
 
 
 	@Override
@@ -43,7 +44,11 @@ public class USBFragmentActivity extends PreferenceFragment {
 		PreferenceScreen prefSet = getPreferenceScreen();
 
 		prefSet.findPreference(DeviceSettings.KEY_USB_OTG_POWER).setEnabled(
-				isSupported(FILE));
+				isSupported(FILE_VOTG));
+		prefSet.findPreference(DeviceSettings.KEY_USE_CHARGER_CONTROL).setEnabled(
+				isSupported(FILE_CHARGER_CONTROL));
+		prefSet.findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+		false);
 
 		getActivity().getActionBar().setTitle(getResources().getString(R.string.usb_name));
 		getActivity().getActionBar().setIcon(getResources().getDrawable(R.drawable.usb_icon));
@@ -61,9 +66,21 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		if (key.equals(DeviceSettings.KEY_USB_OTG_POWER)) {
 			if (((CheckBoxPreference) preference).isChecked()) {
-				Utils.writeValue(FILE, "1");
+				Utils.writeValue(FILE_VOTG, "1");
 			} else {
-				Utils.writeValue(FILE, "0");
+				Utils.writeValue(FILE_VOTG, "0");
+			}
+		}
+
+		if (key.equals(DeviceSettings.KEY_USE_CHARGER_CONTROL)) {
+			if (((CheckBoxPreference) preference).isChecked()) {
+				Utils.writeValue(FILE_CHARGER_CONTROL, "on");
+				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+				true);
+			} else {
+				Utils.writeValue(FILE_CHARGER_CONTROL, "off");
+				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
+				false);
 			}
 		}
 
@@ -80,6 +97,10 @@ public class USBFragmentActivity extends PreferenceFragment {
 
 		String votgvalue = sharedPrefs.getBoolean(
 				DeviceSettings.KEY_USB_OTG_POWER, false) ? "1" : "0";
-		Utils.writeValue(FILE, votgvalue);
+		Utils.writeValue(FILE_VOTG, votgvalue);
+
+		String ccvalue = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_USE_CHARGER_CONTROL, false) ? "on" : "off";
+		Utils.writeValue(FILE_CHARGER_CONTROL, ccvalue);
 	}
 }
