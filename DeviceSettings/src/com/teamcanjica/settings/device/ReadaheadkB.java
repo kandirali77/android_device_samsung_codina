@@ -3,9 +3,9 @@ package com.teamcanjica.settings.device;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
-import android.preference.Preference.OnPreferenceChangeListener;
 
 public class ReadaheadkB extends CustomSeekBarDialogPreference implements OnPreferenceChangeListener {
 
@@ -39,7 +39,7 @@ public class ReadaheadkB extends CustomSeekBarDialogPreference implements OnPref
 
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
-		Utils.writeValue(FILE, String.valueOf((Integer) newValue));
+		Utils.writeValue(FILE, String.valueOf((Integer) newValue + 128));
 		return true;
 	}
 

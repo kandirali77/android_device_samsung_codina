@@ -2,6 +2,7 @@ package com.teamcanjica.settings.device;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
@@ -69,6 +70,8 @@ public class CustomSeekBarDialogPreference extends
 		seekBar.setOnSeekBarChangeListener(this);
 		seekBar.setKeyProgressIncrement(stepSize);
 		seekBar.setMax(maximumValue - minimumValue);
+		SharedPreferences prefs = getContext().getSharedPreferences(DeviceSettings.KEY_SEEKBARVAL, Context.MODE_PRIVATE);
+		value = prefs.getInt("seekBarValue", 512);
 		seekBar.setProgress(value);
 
 		return view;
@@ -108,6 +111,8 @@ public class CustomSeekBarDialogPreference extends
 	public void onClick(DialogInterface dialog, int which) {
 		// if the positive button is clicked, we persist the value.
 		if (which == DialogInterface.BUTTON_POSITIVE) {
+			SharedPreferences prefs = getContext().getSharedPreferences(DeviceSettings.KEY_SEEKBARVAL, Context.MODE_PRIVATE);
+			prefs.edit().putInt("seekBarValue", seekBar.getProgress()).commit();
 			if (shouldPersist()) {
 				persistInt(value + minimumValue);
 			}
@@ -116,4 +121,3 @@ public class CustomSeekBarDialogPreference extends
 		super.onClick(dialog, which);
 	}
 }
-
