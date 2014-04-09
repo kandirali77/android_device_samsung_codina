@@ -33,6 +33,11 @@
     <string name="cc_title_head">Charger currency</string>
     <string name="cc_summary_head">Charger currency in mA, low levels protect battery but takes longer to charge, high levels may damage battery life</string>
 
+    <!-- SUBCATEGORY: End of charge -->
+    <string name="eoc_title">Charge status</string>
+    <string name="eoc_title_head">End of charge</string>
+    <string name="eoc_summary_head">Check real charge status</string>
+
     <!-- CATEGORY: AUDIO -->
     <string name="audio_name">Audio</string>
 

@@ -25,4 +25,12 @@
             android:title="@string/cc_title_head" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/eoc_title" >
+        <!-- End of charge -->
+        <Preference
+            android:key="eoc_status"
+            android:summary="@string/eoc_summary_head"
+            android:title="@string/eoc_title_head" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

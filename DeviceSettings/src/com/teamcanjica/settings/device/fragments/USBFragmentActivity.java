@@ -26,6 +26,11 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import com.teamcanjica.settings.device.DeviceSettings;
 import com.teamcanjica.settings.device.R;
 import com.teamcanjica.settings.device.Utils;
@@ -35,6 +40,7 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxyAce2_Settings_USB";
 	private static final String FILE_VOTG = "/sys/kernel/abb-regu/VOTG";
 	private static final String FILE_CHARGER_CONTROL = "/sys/kernel/abb-charger/charger_curr";
+	private static final String FILE_EOC = "/sys/kernel/abb-chargalg/eoc_status";
 
 
 	@Override
@@ -84,6 +90,24 @@ public class USBFragmentActivity extends PreferenceFragment {
 				getPreferenceScreen().findPreference(DeviceSettings.KEY_CHARGER_CURRENCY).setEnabled(
 				false);
 			}
+		}
+
+		if (key.compareTo(DeviceSettings.KEY_EOC) == 0) {
+			String eoc = null;
+			BufferedReader buffread;
+			try {
+				buffread = new BufferedReader(new FileReader(FILE_EOC));
+				eoc = buffread.readLine();
+				buffread.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			Utils.showDialog((Context) getActivity(),
+					getString(R.string.eoc_title),
+					(String) eoc);
+
 		}
 
 		return true;
