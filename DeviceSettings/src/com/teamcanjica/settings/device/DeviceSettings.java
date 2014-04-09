@@ -3,8 +3,6 @@ package com.teamcanjica.settings.device;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.teamcanjica.settings.device.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

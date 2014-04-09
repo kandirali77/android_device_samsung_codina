@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package com.teamcanjica.settings.device;
-
-import com.teamcanjica.settings.device.R;
+package com.teamcanjica.settings.device.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -27,6 +25,10 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
+
+import com.teamcanjica.settings.device.DeviceSettings;
+import com.teamcanjica.settings.device.R;
+import com.teamcanjica.settings.device.Utils;
 
 public class PowermgmtFragmentActivity extends PreferenceFragment {
 

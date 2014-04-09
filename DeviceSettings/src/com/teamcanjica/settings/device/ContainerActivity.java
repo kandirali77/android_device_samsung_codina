@@ -1,13 +1,19 @@
 package com.teamcanjica.settings.device;
 
-import com.teamcanjica.settings.device.R;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+
+import com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity;
+import com.teamcanjica.settings.device.fragments.AudioFragmentActivity;
+import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
+import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
+import com.teamcanjica.settings.device.fragments.PowermgmtFragmentActivity;
+import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
+import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
 public class ContainerActivity extends Activity {
 

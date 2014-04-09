@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.teamcanjica.settings.device;
-
-import com.teamcanjica.settings.device.R;
+package com.teamcanjica.settings.device.fragments;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
+import com.teamcanjica.settings.device.R;
 
 public class NetworkFragmentActivity extends PreferenceFragment {
 

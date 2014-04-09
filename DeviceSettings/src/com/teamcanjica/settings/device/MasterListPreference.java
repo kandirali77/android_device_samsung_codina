@@ -1,4 +1,4 @@
-package com.zwliew.settings.device;
+package com.teamcanjica.settings.device;
 
 import java.io.IOException;
 

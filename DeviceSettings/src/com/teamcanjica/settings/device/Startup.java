@@ -20,6 +20,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity;
+import com.teamcanjica.settings.device.fragments.AudioFragmentActivity;
+import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
+import com.teamcanjica.settings.device.fragments.PowermgmtFragmentActivity;
+import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
+import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
+
 public class Startup extends BroadcastReceiver {
 
 	@Override

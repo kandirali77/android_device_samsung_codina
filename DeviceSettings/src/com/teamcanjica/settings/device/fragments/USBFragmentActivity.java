@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package com.teamcanjica.settings.device;
+package com.teamcanjica.settings.device.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
-import android.preference.CheckBoxPreference;
 import android.util.Log;
 
+import com.teamcanjica.settings.device.DeviceSettings;
 import com.teamcanjica.settings.device.R;
+import com.teamcanjica.settings.device.Utils;
 
 public class USBFragmentActivity extends PreferenceFragment {
 
