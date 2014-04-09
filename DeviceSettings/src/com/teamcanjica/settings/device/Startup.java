@@ -25,20 +25,13 @@ public class Startup extends BroadcastReceiver {
 	@Override
 	public void onReceive(final Context context, final Intent bootintent) {
 		USBFragmentActivity.restore(context);
-		ChargerCurrency.restore(context);
 		AudioFragmentActivity.restore(context);
 		ScreenFragmentActivity.restore(context);
-		FsyncMode.restore(context);
-		MaliL2MaxReads.restore(context);
-		MaliPreAllocMem.restore(context);
 		PowermgmtFragmentActivity.restore(context);
-		DeepestSleepState.restore(context);
 		AdvancedFragmentActivity.restore(context);
-		SchedMC.restore(context);
-		TCPControl.restore(context);
-		ReadaheadkB.restore(context);
 		GPUFragmentActivity.restore(context);
-		GPUClockSpeed.restore(context);
-		
+		MasterListPreference.restore(context);
+		ReadaheadkB.restore(context);
+
 	}
 }

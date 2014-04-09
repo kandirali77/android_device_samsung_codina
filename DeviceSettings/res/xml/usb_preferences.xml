@@ -16,7 +16,7 @@
             android:key="use_charger_control"
             android:summary="@string/use_cc_summary_head"
             android:title="@string/use_cc_title_head" />
-        <com.teamcanjica.settings.device.ChargerCurrency
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="600"
             android:entries="@array/charger_currency_entries"
             android:entryValues="@array/charger_currency_entries_values"

@@ -23,7 +23,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/fsync_subcat_title" >
-        <com.teamcanjica.settings.device.FsyncMode
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="0"
             android:entries="@array/fsync_mode_entries"
             android:entryValues="@array/fsync_mode_entries_values"
@@ -33,7 +33,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/gpu_subcat_title" >
-        <com.teamcanjica.settings.device.MaliL2MaxReads
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="48"
             android:entries="@array/mali_l2_mr_entries"
             android:entryValues="@array/mali_l2_mr_entries_values"
@@ -41,7 +41,7 @@
             android:summary="@string/mali_l2_mr_summary_head"
             android:title="@string/mali_l2_mr_title_head" />
 
-        <com.teamcanjica.settings.device.MaliPreAllocMem
+		<com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="50331648"
             android:entries="@array/mali_pam_entries"
             android:entryValues="@array/mali_pam_entries_values"

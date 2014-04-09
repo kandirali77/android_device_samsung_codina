@@ -5,8 +5,8 @@
             android:key="disable_autoboost"
             android:summary="@string/disable_autoboost_summary_head"
             android:title="@string/disable_autoboost_title_head" />
-        
-        <com.teamcanjica.settings.device.GPUClockSpeed
+
+        <com.teamcanjica.settings.device.MasterListPreference
             android:key="set_gpu_clock"
             android:summary="@string/set_gpu_clock_summary_head"
             android:title="@string/set_gpu_clock_title_head"

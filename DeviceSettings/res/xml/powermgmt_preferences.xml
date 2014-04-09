@@ -9,7 +9,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/scheduler_subcat_title" >
-        <com.teamcanjica.settings.device.SchedMC
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="0"
             android:entries="@array/sched_mc_entries"
             android:entryValues="@array/sched_mc_entries_values"
@@ -19,7 +19,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/deepsleep_subcat_title" >
-        <com.teamcanjica.settings.device.DeepestSleepState
+        <com.teamcanjica.settings.device.MasterListPreference
             android:defaultValue="3"
             android:entries="@array/deepest_sleep_states_entries"
             android:entryValues="@array/deepest_sleep_states_entries_values"
