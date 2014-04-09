@@ -196,7 +196,7 @@ on post-fs
 on post-fs-data
 
     # give system access to wpa_supplicant.conf for backup and restore
-    mkdir /data/misc/wifi 0770 wifi system
+    mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /efs/wifi 0775 radio system
     mkdir /efs/bluetooth 0775 radio system
     mkdir /efs/imei 0775 radio system
