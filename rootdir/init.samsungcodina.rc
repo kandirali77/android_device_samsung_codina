@@ -567,6 +567,8 @@ on property:sys.boot_completed=1
     chown system system /sys/devices/system/cpu/sched_mc_power_savings
     chown system system /sys/class/misc/backlightnotification/enabled
     chown system system /sys/kernel/abb-charger/charger_curr
+    chown system system /sys/kernel/abb-chargalg/eoc_first
+    chown system system /sys/kernel/abb-chargalg/eoc_real
     chown system system /sys/kernel/abb-codec/anagain3
     chown system system /sys/kernel/abb-codec/hsrdiggain
     chown system system /sys/kernel/abb-codec/hsldiggain
@@ -583,6 +585,7 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/fsync/mode
     chown system system /sys/kernel/mali/mali_gpu_clock
     chown system system /sys/kernel/mali/mali_auto_boost
+    chown system system /sys/kernel/mali/mali_gpu_fullspeed
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
     chown system system /sys/module/dhd/parameters/dhdpm_fast
     chown system system /sys/module/mali/parameters/mali_l2_max_reads
