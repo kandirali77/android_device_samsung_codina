@@ -106,7 +106,7 @@ public class AdvancedFragmentActivity extends PreferenceFragment {
 				DeviceSettings.KEY_USE_ACCELEROMETER_CALIBRATION, true) ? "1" : "0");
 
 		Utils.writeValue(FILE_BLN, sharedPrefs.getBoolean(
-				DeviceSettings.KEY_DISABLE_BLN, true) ? "0" : "1");
+				DeviceSettings.KEY_DISABLE_BLN, false) ? "1" : "0");
 
 	}
 
