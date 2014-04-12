@@ -133,11 +133,13 @@ public class MasterSeekBarDialogPreference extends
 
 		super.onClick(dialog, which);
 	}
+
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 
 		String key = preference.getKey();
 		Log.w(TAG, "key: " + key);
+
 
 		if (key.equals(DeviceSettings.KEY_READAHEADKB)) {
 			Utils.writeValue(FILE_READAHEADKB, String.valueOf((Integer) newValue + 128));
@@ -219,9 +221,9 @@ public class MasterSeekBarDialogPreference extends
 				.getDefaultSharedPreferences(context);
 
 		Utils.writeValue(FILE_CYCLE_CHARGING, 
-				"dischar=" + sharedPrefs.getString(DeviceSettings.KEY_DISCHARGING_THRESHOLD, "100"));
+				"dischar=" + String.valueOf(sharedPrefs.getString(String.valueOf(DeviceSettings.KEY_DISCHARGING_THRESHOLD), "100")));
 		Utils.writeValue(FILE_CYCLE_CHARGING,
-				"rechar=" + sharedPrefs.getString(DeviceSettings.KEY_RECHARGING_THRESHOLD, "100"));
+				"rechar=" + String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_RECHARGING_THRESHOLD, "100")));
 
 		Utils.writeValue(FILE_READAHEADKB,
 				String.valueOf(sharedPrefs.getString(DeviceSettings.KEY_READAHEADKB, "512")));
