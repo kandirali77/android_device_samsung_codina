@@ -62,6 +62,8 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String SELECTION = "selection";
 	public static final String SETTINGS = "settings";
 	
+	public static boolean enableRestore;
+
 	public static final String[] titles = new String[] { "Network",
         "USB", "Audio", "Screen", "GPU", "I/O", "Advanced" };
 

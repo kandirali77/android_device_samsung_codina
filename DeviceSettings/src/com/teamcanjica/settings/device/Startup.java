@@ -19,6 +19,7 @@ package com.teamcanjica.settings.device;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.preference.PreferenceManager;
 
 import com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity;
 import com.teamcanjica.settings.device.fragments.AudioFragmentActivity;
@@ -26,6 +27,7 @@ import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
 import com.teamcanjica.settings.device.fragments.IOFragmentActivity;
 import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
 import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
+import com.teamcanjica.settings.device.fragments.SettingsFragmentActivity;
 import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
 public class Startup extends BroadcastReceiver {
@@ -34,7 +36,8 @@ public class Startup extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(final Context context, final Intent bootintent) {
-		if (enableRestore) {
+		SettingsFragmentActivity.restore(context);
+		if (DeviceSettings.enableRestore) {
 			USBFragmentActivity.restore(context);
 			AudioFragmentActivity.restore(context);
 			ScreenFragmentActivity.restore(context);
@@ -44,6 +47,9 @@ public class Startup extends BroadcastReceiver {
 			MasterListPreference.restore(context);
 			MasterSeekBarDialogPreference.restore(context);
 			IOFragmentActivity.restore(context);
+		} else if (!DeviceSettings.enableRestore) {
+			PreferenceManager.getDefaultSharedPreferences(context).
+				edit().clear().commit();
 		}
 	}
 }

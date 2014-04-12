@@ -1,15 +1,17 @@
 package com.teamcanjica.settings.device.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
 import com.teamcanjica.settings.device.DeviceSettings;
 import com.teamcanjica.settings.device.R;
-import com.teamcanjica.settings.device.Startup;
 
 public class SettingsFragmentActivity extends PreferenceFragment {
 	
@@ -34,11 +36,19 @@ public class SettingsFragmentActivity extends PreferenceFragment {
 		Log.w(TAG, "key: " + key);
 
 		if (key.equals(DeviceSettings.KEY_ENABLE_RESTORE)) {
-			Startup.enableRestore = (((CheckBoxPreference) preference).
+			DeviceSettings.enableRestore = (((CheckBoxPreference) preference).
 					isChecked() ? true : false);
 		}
 
 		return true;
 	}
 
+	public static void restore(Context context) {
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(context);
+
+		DeviceSettings.enableRestore = sharedPrefs.getBoolean(
+				DeviceSettings.KEY_ENABLE_RESTORE, false) ? true : false;
+
+	}
 }
