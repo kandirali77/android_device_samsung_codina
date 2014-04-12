@@ -30,16 +30,20 @@ import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
 public class Startup extends BroadcastReceiver {
 
+	public static boolean enableRestore = true;
+
 	@Override
 	public void onReceive(final Context context, final Intent bootintent) {
-		USBFragmentActivity.restore(context);
-		AudioFragmentActivity.restore(context);
-		ScreenFragmentActivity.restore(context);
-		NetworkFragmentActivity.restore(context);
-		AdvancedFragmentActivity.restore(context);
-		GPUFragmentActivity.restore(context);
-		MasterListPreference.restore(context);
-		MasterSeekBarDialogPreference.restore(context);
-		IOFragmentActivity.restore(context);
+		if (enableRestore) {
+			USBFragmentActivity.restore(context);
+			AudioFragmentActivity.restore(context);
+			ScreenFragmentActivity.restore(context);
+			NetworkFragmentActivity.restore(context);
+			AdvancedFragmentActivity.restore(context);
+			GPUFragmentActivity.restore(context);
+			MasterListPreference.restore(context);
+			MasterSeekBarDialogPreference.restore(context);
+			IOFragmentActivity.restore(context);
+		}
 	}
 }

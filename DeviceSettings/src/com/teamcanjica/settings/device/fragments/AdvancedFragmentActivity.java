@@ -18,18 +18,15 @@ package com.teamcanjica.settings.device.fragments;
 
 import java.io.IOException;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
-import android.view.MenuItem;
 
 import com.teamcanjica.settings.device.DeviceSettings;
 import com.teamcanjica.settings.device.R;

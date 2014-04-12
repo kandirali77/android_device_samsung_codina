@@ -32,6 +32,7 @@
         </receiver>
 
 		<activity android:name="com.teamcanjica.settings.device.ContainerActivity" />
+		<activity android:name="com.teamcanjica.settings.device.AboutActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.NetworkFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.USBFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.AudioFragmentActivity" />
@@ -39,6 +40,7 @@
 		<activity android:name="com.teamcanjica.settings.device.fragments.AdvancedFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.GPUFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.ScreenFragmentActivity" />
+		<activity android:name="com.teamcanjica.settings.device.fragments.SettingsFragmentActivity" />
         
     </application>
 </manifest>

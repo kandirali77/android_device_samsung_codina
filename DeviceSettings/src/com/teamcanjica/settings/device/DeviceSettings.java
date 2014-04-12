@@ -6,10 +6,15 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+
+import com.teamcanjica.settings.device.fragments.SettingsFragmentActivity;
 
 public class DeviceSettings extends Activity implements OnItemClickListener{
 
@@ -54,8 +59,10 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	public static final String KEY_SET_GPU_CLOCK = "set_gpu_clock";
 	public static final String KEY_DISABLE_FULLSPEED = "disable_fullspeed";
 	public static final String KEY_CPU_VOLTAGE = "cpu_voltage";
+	public static final String KEY_ENABLE_RESTORE = "enable_restore";
 	
 	public static final String SELECTION = "selection";
+	public static final String SETTINGS = "settings";
 	
 	public static final String[] titles = new String[] { "Network",
         "USB", "Audio", "Screen", "GPU", "I/O", "Advanced" };
@@ -91,8 +98,33 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 			long id) {
 		Intent intent = new Intent(this, ContainerActivity.class);
 		intent.putExtra(SELECTION, index);
-		startActivity(intent);	
+		startActivity(intent);
 		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.device_settings, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_about:
+	        	startActivity(new Intent("com.teamcanjica.settings.device.AboutActivity"));
+	            return true;
+	        case R.id.action_settings:
+	        	Intent intent = new Intent(this, ContainerActivity.class);
+	        	intent.putExtra(SETTINGS, "start_settings");
+	        	startActivity(intent);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 
 }
