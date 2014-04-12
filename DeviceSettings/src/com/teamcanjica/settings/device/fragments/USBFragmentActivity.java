@@ -40,7 +40,7 @@ public class USBFragmentActivity extends PreferenceFragment {
 	private static final String TAG = "GalaxyAce2_Settings_USB";
 	private static final String FILE_VOTG = "/sys/kernel/abb-regu/VOTG";
 	private static final String FILE_CHARGER_CONTROL = "/sys/kernel/abb-charger/charger_curr";
-	private static final String FILE_CYCLE_CHARGING_CONTROL = "/sys/kernel/abb-fg/cyc_fg";
+	private static final String FILE_CYCLE_CHARGING_CONTROL = "/sys/kernel/abb-fg/fg_cyc";
 	private static final String FILE_EOC = "/sys/kernel/abb-chargalg/eoc_status";
 	private static final String FILE_EOC_FIRST = "/sys/kernel/abb-chargalg/eoc_first";
 	private static final String FILE_EOC_REAL = "/sys/kernel/abb-chargalg/eoc_real";

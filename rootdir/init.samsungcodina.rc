@@ -566,7 +566,7 @@ on property:sys.boot_completed=1
     chown system system /sys/block/mmcblk0/queue/read_ahead_kb
     chown system system /sys/devices/system/cpu/sched_mc_power_savings
     chown system system /sys/class/misc/backlightnotification/enabled
-    chown system system /sys/kernel/abb-fg/cyc_fg
+    chown system system /sys/kernel/abb-fg/fg_cyc
     chown system system /sys/kernel/abb-charger/charger_curr
     chown system system /sys/kernel/abb-chargalg/eoc_first
     chown system system /sys/kernel/abb-chargalg/eoc_real

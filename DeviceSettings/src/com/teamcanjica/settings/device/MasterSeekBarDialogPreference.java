@@ -33,7 +33,7 @@ public class MasterSeekBarDialogPreference extends
 
 	private static final String FILE_READAHEADKB = "/sys/block/mmcblk0/queue/read_ahead_kb";
 	private static final String FILE_CPU_VOLTAGE = "/sys/kernel/liveopp/arm_step";
-	private static final String FILE_CYCLE_CHARGING = "/sys/kernel/abb-fg/cyc_fg";
+	private static final String FILE_CYCLE_CHARGING = "/sys/kernel/abb-fg/fg_cyc";
 
 	/**
 	 * The SeekBarDialogPreference constructor.
