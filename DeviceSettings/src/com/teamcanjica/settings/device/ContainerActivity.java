@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
 import com.teamcanjica.settings.device.fragments.IOFragmentActivity;
 import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
 import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
+import com.teamcanjica.settings.device.fragments.SettingsFragmentActivity;
 import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
 public class ContainerActivity extends Activity {
@@ -28,10 +30,10 @@ public class ContainerActivity extends Activity {
 		setContentView(R.layout.container);
 		frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
 		
-		Fragment fragment = new Fragment();
+		Fragment fragment = new SettingsFragmentActivity();
 		FragmentManager fm = getFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
-
+		try {
 		switch (getIntent().getExtras().getInt(DeviceSettings.SELECTION)) {
 			case 0:
 				// Network
@@ -64,9 +66,14 @@ public class ContainerActivity extends Activity {
 			default:
 				break;
 		}
-		
+		} catch (NullPointerException e) {
+
+		}
+
 		transaction.replace(R.id.frameLayout, fragment);
 		transaction.commit();
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		super.onCreate(savedInstanceState);
 	}
@@ -87,8 +94,12 @@ public class ContainerActivity extends Activity {
 	        	startActivity(new Intent(this, AboutActivity.class));
 	            return true;
 	        case R.id.action_settings:
-	        	startActivity(new Intent(this, SettingsContainerActivity.class));
+	        	getFragmentManager().beginTransaction().
+	        		replace(R.id.frameLayout, new SettingsFragmentActivity()).commit();
 	        	return true;
+	        case android.R.id.home:
+	        	NavUtils.navigateUpFromSameTask(this);
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

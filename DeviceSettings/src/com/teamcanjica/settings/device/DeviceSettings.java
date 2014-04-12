@@ -89,6 +89,7 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
             R.layout.list_item, rowItems);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(this);
+
 	}
 
 	@Override
@@ -116,7 +117,7 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	        	startActivity(new Intent(this, AboutActivity.class));
 	            return true;
 	        case R.id.action_settings:
-	        	startActivity(new Intent(this, SettingsContainerActivity.class));
+	        	startActivity(new Intent(this, ContainerActivity.class));
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
