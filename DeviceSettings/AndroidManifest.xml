@@ -32,6 +32,7 @@
         </receiver>
 
 		<activity android:name="com.teamcanjica.settings.device.ContainerActivity" />
+		<activity android:name="com.teamcanjica.settings.device.SettingsContainerActivity" />
 		<activity android:name="com.teamcanjica.settings.device.AboutActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.NetworkFragmentActivity" />
 		<activity android:name="com.teamcanjica.settings.device.fragments.USBFragmentActivity" />

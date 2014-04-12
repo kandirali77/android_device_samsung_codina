@@ -14,8 +14,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.teamcanjica.settings.device.fragments.SettingsFragmentActivity;
-
 public class DeviceSettings extends Activity implements OnItemClickListener{
 
 	public static final String SHARED_PREFERENCES_BASENAME = "com.teamcanjica.settings.device";
@@ -115,12 +113,10 @@ public class DeviceSettings extends Activity implements OnItemClickListener{
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_about:
-	        	startActivity(new Intent("com.teamcanjica.settings.device.AboutActivity"));
+	        	startActivity(new Intent(this, AboutActivity.class));
 	            return true;
 	        case R.id.action_settings:
-	        	Intent intent = new Intent(this, ContainerActivity.class);
-	        	intent.putExtra(SETTINGS, "start_settings");
-	        	startActivity(intent);
+	        	startActivity(new Intent(this, SettingsContainerActivity.class));
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);

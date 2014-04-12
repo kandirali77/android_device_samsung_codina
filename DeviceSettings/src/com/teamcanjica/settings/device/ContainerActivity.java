@@ -17,7 +17,6 @@ import com.teamcanjica.settings.device.fragments.GPUFragmentActivity;
 import com.teamcanjica.settings.device.fragments.IOFragmentActivity;
 import com.teamcanjica.settings.device.fragments.NetworkFragmentActivity;
 import com.teamcanjica.settings.device.fragments.ScreenFragmentActivity;
-import com.teamcanjica.settings.device.fragments.SettingsFragmentActivity;
 import com.teamcanjica.settings.device.fragments.USBFragmentActivity;
 
 public class ContainerActivity extends Activity {
@@ -33,10 +32,7 @@ public class ContainerActivity extends Activity {
 		FragmentManager fm = getFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
 
-		if ("start_settings".equals(getIntent().getExtras().getInt(DeviceSettings.SETTINGS))) {
-			fragment = new SettingsFragmentActivity();
-		} else {
-			switch (getIntent().getExtras().getInt(DeviceSettings.SELECTION)) {
+		switch (getIntent().getExtras().getInt(DeviceSettings.SELECTION)) {
 			case 0:
 				// Network
 				fragment = new NetworkFragmentActivity();
@@ -65,10 +61,8 @@ public class ContainerActivity extends Activity {
 				// Advanced
 				fragment = new AdvancedFragmentActivity();
 				break;
-
 			default:
 				break;
-			}
 		}
 		
 		transaction.replace(R.id.frameLayout, fragment);
@@ -90,11 +84,10 @@ public class ContainerActivity extends Activity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_about:
-	        	startActivity(new Intent("com.teamcanjica.settings.device.AboutActivity"));
+	        	startActivity(new Intent(this, AboutActivity.class));
 	            return true;
 	        case R.id.action_settings:
-	        	getFragmentManager().beginTransaction().
-	        		replace(R.id.frameLayout, new SettingsFragmentActivity()).commit();
+	        	startActivity(new Intent(this, SettingsContainerActivity.class));
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
