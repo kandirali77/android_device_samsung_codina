@@ -12,10 +12,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/device_tunables.rc:root/device_tunables.rc \
-    $(LOCAL_PATH)/rootdir/fstab.samsungcodina:root/fstab.samsungcodina \
-    $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.samsungcodina.rc \
-    $(LOCAL_PATH)/rootdir/init.recovery.samsungcodina.rc:root/init.recovery.samsungcodina.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc
+    $(LOCAL_PATH)/rootdir/init.u8500.rc:root/init.u8500.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.u8500.rc:root/init.recovery.u8500.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.u8500.rc:root/ueventd.u8500.rc
     
 # STE
 PRODUCT_COPY_FILES += \

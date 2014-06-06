@@ -1,4 +1,4 @@
-import /init.u8500.rc
+import /init.u8500-common.rc
 
 on init
 
