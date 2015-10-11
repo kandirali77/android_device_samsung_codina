@@ -1,8 +1,24 @@
 # Include common makefile
 $(call inherit-product, device/samsung/u8500-common/common.mk)
 
+# Some required packages
+PRODUCT_PACKAGES += \
+	e2fsck \
+	libexifa \
+	libjpega \
+	libkeyutils \
+	audio.a2dp.default \
+	libasound \
+	bcm_dut \
+	libnl \
+	libsteomxil-bellagio \
+	busybox \
+	bionic \
+	llvm \
+	vold
+
 # For better compatibility with ROMs (like Slim, PAC)
-$(call inherit-product, vendor/samsung/u8500-common/codina/codina-vendor-blobs.mk)
+# $(call inherit-product, vendor/samsung/u8500-common/codina/codina-vendor-blobs.mk)
 
 LOCAL_PATH := device/samsung/codina
 
@@ -16,7 +32,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.samsungcodina.rc:root/init.recovery.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc
-    
+
 # STE Modem
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
@@ -28,3 +44,4 @@ PRODUCT_COPY_FILES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+
