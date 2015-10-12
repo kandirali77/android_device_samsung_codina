@@ -1,22 +1,6 @@
 # Include common makefile
 $(call inherit-product, device/samsung/u8500-common/common.mk)
 
-# Some required packages
-PRODUCT_PACKAGES += \
-	e2fsck \
-	libexifa \
-	libjpega \
-	libkeyutils \
-	audio.a2dp.default \
-	libasound \
-	bcm_dut \
-	libnl \
-	libsteomxil-bellagio \
-	busybox \
-	bionic \
-	llvm \
-	vold
-
 # For better compatibility with ROMs (like Slim, PAC)
 # $(call inherit-product, vendor/samsung/u8500-common/codina/codina-vendor-blobs.mk)
 
